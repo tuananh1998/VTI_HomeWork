@@ -42,4 +42,4 @@ CREATE TABLE teacher
     Gender			TINYINT(2), -- 0: M, 1:F, 2:U
     IsDeleteFlag    BIT NOT NULL -- (0: Active,1: Deleted)
 );
--- drop database if exists fresher
+ 
