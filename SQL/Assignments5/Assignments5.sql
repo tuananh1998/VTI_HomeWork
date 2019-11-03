@@ -6,18 +6,18 @@
    SELECT 		p.Name
    FROM 		product AS p
    WHERE		p.ProductSubcategoryID IN(
-	   SELECT 		psc.ProductSubcategoryID
-	   FROM 		productsubcategory AS psc
-	   WHERE		psc.Name='Saddles');
+	    SELECT 		psc.ProductSubcategoryID
+	    FROM 		productsubcategory AS psc
+	    WHERE		psc.Name='Saddles');
    
 -- Question 2
    
    SELECT 		p.Name
    FROM 		product AS p
    WHERE		p.ProductSubcategoryID IN(
-	   SELECT 		psc.ProductSubcategoryID
-	   FROM 		productsubcategory AS psc
-	   WHERE		psc.Name LIKE 'Bo%');
+	    SELECT 		psc.ProductSubcategoryID
+	    FROM 		productsubcategory AS psc
+	    WHERE		psc.Name LIKE 'Bo%');
 	   
 -- Question 3
      
@@ -45,11 +45,15 @@
    WHERE			cr.Name IN('Germany','Canada');
   
 -- Question 3
+	SELECT 			soh.SalesOrderID,soh.OrderDate,soh.SalesPersonID,sp.SalesPersonID AS BusinessEntityID,sp.Bonus,sp.SalesYTD
+   FROM 			salesperson AS sp	
+   JOIN				salesorderheader AS soh ON sp.SalesPersonID=soh.SalesPersonID;
+ --  WHERE			soh.OnlineOrderFlag!=1;
+  
 -- Use Full outer Join
    SELECT 			soh.SalesOrderID,soh.OrderDate,soh.SalesPersonID,sp.SalesPersonID AS BusinessEntityID,sp.Bonus,sp.SalesYTD
    FROM 			salesorderheader AS soh
    LEFT JOIN		salesperson AS sp ON sp.SalesPersonID=soh.SalesPersonID
-   INNER JOIN		employee AS e ON e.EmployeeID=soh.SalesPersonID
    WHERE			soh.SalesPersonID=NULL AND soh.OnlineOrderFlag=1
    UNION ALL
    SELECT 			soh.SalesOrderID,soh.OrderDate,soh.SalesPersonID,sp.SalesPersonID AS BusinessEntityID,sp.Bonus,sp.SalesYTD
