@@ -3,6 +3,7 @@
 CREATE DATABASE IF NOT EXISTS Fresher;
 -- use DB fresher
 USE Fresher;
+DROP TABLE IF EXISTS Trainee;
 -- Create Table Trainee
 CREATE TABLE Trainee
 (

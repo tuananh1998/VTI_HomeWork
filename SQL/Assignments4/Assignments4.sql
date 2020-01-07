@@ -113,8 +113,9 @@
     INNER JOIN		Employee_Skill_Table est ON et.Employee_Number=est.Employee_Number
     GROUP BY		est.Employee_Number
     HAVING			COUNT(est.Employee_Number)>1;
-	
 
+		
+	
 
 
 

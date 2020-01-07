@@ -160,5 +160,15 @@
 -- Hiển Thị view
 		SELECT 				*
         FROM				v1
+        DECLARE	sn VARCHAR(50);
+                SET sn=student_name;
+				DROP TABLE IF EXISTS getID;
+				CREATE TEMPORARY TABLE getID(
+                row_Num INT);
+				INSERT INTO 	getID(
+					SELECT 	RN
+                    FROM	Student
+                    WHERE 	`Name`=sn
+                );
 	
     
