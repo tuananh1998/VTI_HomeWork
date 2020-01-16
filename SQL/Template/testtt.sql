@@ -74,8 +74,6 @@
       READS SQL DATA
 			BEGIN
 			DECLARE CarName VARCHAR(50); 
-           
-            
 					
 					SELECT 		c.Maker INTO CarName
 					FROM 		CAR c
